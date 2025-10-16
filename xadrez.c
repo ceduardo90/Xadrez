@@ -3,8 +3,6 @@
 //Simulação de movimento de peças de xadrez
 int main(){
 
-    int bispo = 0, rainha = 0;
-
     //Mover a torre 5 casas para a direita - For
     printf("Torre:\n");
 
@@ -13,8 +11,12 @@ int main(){
         printf("Direita!\n"); //Imprime a direção do movimento
     }
 
+    printf("\n");
+
     //Mover o bispo 5 casas na diagonal - While
     printf("Bispo:\n");
+
+    int bispo = 0;
 
     while (bispo < 5)
     {
@@ -23,9 +25,13 @@ int main(){
         bispo++;
 
     }
+
+    printf("\n");
     
     //Mover a rainha 8 casas para a esquerda - Do while
     printf("Rainha:\n");
+
+    int rainha = 0;
 
     do
     {
@@ -33,7 +39,24 @@ int main(){
         rainha++;
 
     } while (rainha <8);
-   
+
+    printf("\n");
+
+    //Mover o cavalo duas casas para cima e uma para a direita
+    printf("Cavalo: \n");
+    
+    int movimentocompleto = 1; //Controle do movimento em "L"
+
+    while (movimentocompleto--)
+    {
+        for (int cavalo = 0; cavalo < 2; cavalo++)
+        {
+            printf("Cima!\n"); //Imprime "Cima" duas vezes
+        }
+        printf("Direita!\n"); //Imprime "Direita" uma vez
+
+    }
+    
 return 0;
 
 }
