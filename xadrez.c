@@ -1,55 +1,16 @@
+//Simulação de movimento de peças de xadrez
 #include <stdio.h>
 
-//Simulação de movimento de peças de xadrez
-int main(){
-
-    //Mover a torre 5 casas para a direita - For
-    printf("Torre:\n");
-
-    for (int torre = 0; torre < 5; torre++)
-    {
-        printf("Direita!\n"); //Imprime a direção do movimento
-    }
-
-    printf("\n");
-
-    //Mover o bispo 5 casas na diagonal - While
-    printf("Bispo:\n");
-
-    int bispo = 0;
-
-    while (bispo < 5)
-    {
-        printf("Cima, direita!\n"); //Imprime a direção do movimento
-
-        bispo++;
-
-    }
-
-    printf("\n");
-    
-    //Mover a rainha 8 casas para a esquerda - Do while
-    printf("Rainha:\n");
-
-    int rainha = 0;
-
-    do
-    {
-        printf("Esquerda!\n"); //Imprime direção do movimento
-        rainha++;
-
-    } while (rainha <8);
-
-    printf("\n");
-
     //Mover o cavalo duas casas para cima e uma para a direita
+    int main(){
+
     printf("Cavalo: \n");
     
     int movimentocompleto = 1; //Controle do movimento em "L"
 
     while (movimentocompleto--)
     {
-        for (int cavalo = 0; cavalo < 2; cavalo++)
+      for (int cavalo = 0; cavalo < 2; cavalo++)
         {
             printf("Cima!\n"); //Imprime "Cima" duas vezes
         }
@@ -57,6 +18,66 @@ int main(){
 
     }
     
-return 0;
+    return 0;
 
-}
+    }
+
+    //Mover a torre 5 casas para a direita
+    void moverTorre(int casas) {
+
+    printf("Torre:\n");
+
+        if (casas > 0)
+        {
+            printf("Direita!\n");
+            moverTorre(casas - 1);
+        }
+    }
+
+    int main() {
+        moverTorre(5);
+        return 0;
+
+    printf("\n");
+
+    }
+
+    //Mover o bispo 5 casas na diagonal
+    void moverBispo(int casas) {
+
+    printf("Bispo:\n");
+
+        if (casas > 0)
+        {
+            printf("Cima, Direita!\n");
+            moverBispo(casas - 1);
+        }
+    }
+
+    int main() {
+        moverBispo(5);
+        return 0;
+
+    printf("\n");
+
+    }
+    
+    //Mover a rainha 8 casas para a esquerda
+    void moverRainha(int casas) {
+
+    printf("Rainha:\n");
+
+        if (casas > 0)
+        {
+            printf("Esquerda!\n");
+            moverTorre(casas - 1);
+        }
+    }
+
+    int main() {
+        moverRainha(8);
+        return 0;
+
+    printf("\n");
+
+    }
